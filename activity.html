@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Activity Upload</title>
+<style>
+    body {
+        font-family: Comic Sans MS, sans-serif;
+        background-color: #f1e1ff;
+        text-align: center;
+    }
+
+    form {
+        margin-top: 40px;
+    }
+
+    input, textarea, button {
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #874caf;
+        color: white;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Activity Upload</h1>
+
+<form>
+    <input type="text" placeholder="Title / Description" required><br>
+    <input type="file" required><br>
+    <label>Upload Proof Image:</label><br>
+    <input type="file" accept="image/*" required><br>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
