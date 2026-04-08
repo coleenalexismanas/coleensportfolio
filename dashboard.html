@@ -9,7 +9,6 @@
             text-align: center;
             background-color: #dfd1ff;
             margin: 0;
-            padding: 0;
         }
 
         header {
@@ -18,7 +17,7 @@
             padding: 20px;
         }
 
-        header nav a {
+        nav a {
             color: white;
             margin: 0 10px;
             text-decoration: none;
@@ -26,138 +25,50 @@
         }
 
         main {
-            padding: 20px;
+            padding: 40px;
         }
 
-        .button-row {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        button {
+        .btn {
+            display: block;
+            width: 200px;
+            margin: 15px auto;
+            padding: 12px;
             background-color: #874caf;
             color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .abutton {
-            background-color: #c73195;
-        }
-
-        .gallery {
-            display: none;
-            margin-top: 15px;
-            padding: 15px;
-            border: 2px dashed #874caf;
-            border-radius: 10px;
-            background-color: #f1e1ff;
-        }
-
-        .gallery img {
-            margin: 10px;
-            border-radius: 15px;
-            display: block;
-        }
-
-        .upload-container {
-            margin-top: 15px;
-        }
-
-        .upload-btn {
-            background-color: #ff70a6;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        input[type="file"] {
-            display: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         footer {
             background-color: #874caf;
             color: white;
             padding: 10px;
+            position: fixed;
+            bottom: 0;
             width: 100%;
-        }
-
-        p {
-            font-size: 1.1em;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Dashboard</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="dashboard.html">Dashboard</a>
-        </nav>
-    </header>
 
-    <main>
-        <div class="button-row">
-            <button onclick="showGallery('a')">Activities</button>
-            <button onclick="showGallery('q')">Quizzes</button>
-            <button onclick="showGallery('e')">Exams</button>
-        </div>
+<header>
+    <h1>Dashboard</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+</header>
 
-        <div id="a" class="gallery">
-            <a href="https://coleenalexismanas.github.io/WEBPAGE/" target="_blank">
-                <button class="abutton">Activity 1</button>
-            </a>
-            <div class="upload-container">
-                <label class="upload-btn">
-                    Upload Activity
-                    <input type="file" onchange="handleUpload('Activity', this.files)">
-                </label>
-            </div>
-        </div>
+<main>
+    <a href="quiz.html" class="btn">Quiz Upload</a>
+    <a href="activity.html" class="btn">Activity Upload</a>
+    <a href="exam.html" class="btn">Major Exam Upload</a>
+</main>
 
-        <div id="q" class="gallery">
-            <img src="q1.jpg" width="250" alt="Quiz 1">
-            <img src="q2.jpg" width="250" alt="Quiz 2">
-            <div class="upload-container">
-                <label class="upload-btn">
-                    Upload Quiz
-                    <input type="file" onchange="handleUpload('Quiz', this.files)">
-                </label>
-            </div>
-        </div>
+<footer>
+    <p>&copy; 2026 Manas, Coleen Alexis C.</p>
+</footer>
 
-        <div id="e" class="gallery">
-            <img src="ket.jpg" alt="Exam">
-            <div class="upload-container">
-                <label class="upload-btn">
-                    Upload Exam
-                    <input type="file" onchange="handleUpload('Exam', this.files)">
-                </label>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Manas, Coleen Alexis C.</p>
-    </footer>
-
-    <script>
-        function showGallery(sectionId) {
-            document.querySelectorAll('.gallery').forEach(g => g.style.display = 'none');
-            document.getElementById(sectionId).style.display = 'block';
-        }
-
-        function handleUpload(type, files) {
-            if (files.length > 0) {
-                alert(type + ' file chosen: ' + files[0].name);
-            }
-        }
-    </script>
 </body>
 </html>
